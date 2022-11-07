@@ -1,0 +1,82 @@
+<!-- chat/templates/chat/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Rooms</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(135, 198, 253, 0.13);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            height: 100vh;
+            width: 100%;
+        }
+        .page-wrapper {
+            height: 100vh;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .inputs-box {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+        #room-name-input {
+            width: 100%;
+            outline: none;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            box-shadow: 5px 5px 10px -2px rgb(238, 238, 238);
+        }
+        #room-name-submit {
+            outline: none;
+            border: none;
+            padding: 10px 20px;
+            background-color: rgb(13, 23, 112);
+            color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <h4>What chat room would you like to enter?</h4>
+        <div class="inputs-box">
+            <input id="room-name-input" required type="text"><br>
+            <input id="room-name-submit" type="button" value="Enter">
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('#room-name-input').focus();
+        document.querySelector('#room-name-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#room-name-submit').click();
+            }
+        };
+
+        document.querySelector('#room-name-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            if (roomName.length < 1 || roomName === " ") {
+                document.querySelector('#room-name-input').placeholder = "Enter a valid room name"
+            } else {
+                window.location.pathname = '/chat/' + roomName + '/';
+            }
+        };
+    </script>
+</body>
+</html>
