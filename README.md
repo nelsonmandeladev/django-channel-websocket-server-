@@ -7,10 +7,10 @@ For now, we just created a simple chat app that allows us to enter a chat room a
 
 To get started make sure:
 ***You have Python3.10.4 running on your local machine; #To check: -Windows user: python --version -Linux/Mac user: python3 --version (install python: https://www.python.org/downloads/)
-
 ***Make sure to have Docker installed (We will use docker to run Redis)
 ***Anny text editor of your choice
 *** Make sure you have virtualenv installed on the local machine if not just run this command: pip install virtualenv
+*** Make sure you have a basic knowlage of CSS, HTML and JavaScript
 
 
 Let Go:
